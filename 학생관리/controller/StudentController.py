@@ -1,6 +1,7 @@
 import os, sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from repos.StudentRepository import StudentRepository
+from service.StudentService import *
 
 class StudentController():
     
@@ -9,7 +10,10 @@ class StudentController():
         self.studentRepository = StudentRepository()
 
     def addStudent(self,student):
-        self.studentRepository.addStudent(student)
+        self.studentRepository.addStudent(changeListToObject(student))
+        
+    def findAllStudents(self):
+        return changeAllObjectToList(self.studentRepository.findAllStudents())
 
-    def showAllStudent(self):
-        return self.studentRepository.findAllStudents()
+    def findbyName(self, name):
+        return self.studentRepository.findbyName()

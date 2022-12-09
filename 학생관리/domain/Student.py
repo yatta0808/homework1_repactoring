@@ -8,13 +8,13 @@ class Student():
     def getName(self):  #약속 : 어떤 데이터를 가지고 오고 싶으면 get대문자단어, 직접 데이터에 접근하는 것보다 이 편이 더 안정적임
         return self.__name
     
-    def getAge(slef):
+    def getAge(self):
         return self.__age
 
     def getHeight(self):
         return self.__height
 
-    def getAvgscore(self):
+    def getAvgScore(self):
         return self.__avgScore
 
     def setName(self, name):    # get과 반대, 외부에서 해당 객체의 데이터를 수정할 때 사용함
