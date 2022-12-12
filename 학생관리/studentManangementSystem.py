@@ -8,6 +8,20 @@ while True:
     if ans == '1':
         student= inputStudentInfo()
         studentController.addStudent(student)
-    if ans == '3':
+    elif ans == '2':
+        deleteStudentName = inputDeleteStudentName()
+        students  = studentController.findbyName(deleteStudentName)
+        showAllStudents(students)
+        if inputDeleteWhether():
+            studentController.deleteStudent(students)
+        else:
+            continue
+    elif ans == '3':
         students = studentController.findAllStudents()
         showAllStudents(students)
+    
+    elif ans == '4':
+        name = inputSearchName()
+        result = studentController.searchByName(name)
+        showResultHeader(name)
+        showAllStudents(result)

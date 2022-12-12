@@ -16,4 +16,18 @@ class StudentController():
         return changeAllObjectToList(self.studentRepository.findAllStudents())
 
     def findbyName(self, name):
-        return self.studentRepository.findbyName()
+        students  = self.studentRepository.findbyName(name)
+        students = changeAllObjectToList(students)
+        return students
+
+    def deleteStudent(self, students):
+        #학생은 1 명일 수도 있고 여러 명일 수도 있지만
+        #지금 당장은 1 명으로 가정하고
+        #나중에 기능 추가한다.
+        student = students[0]
+        student = changeListToObject(student)
+        self.studentRepository.deleteStudent(student)
+
+    def searchByName(self, name):
+        searchResult = self.studentRepository.searchByName(name)
+        return changeAllObjectToList(searchResult)

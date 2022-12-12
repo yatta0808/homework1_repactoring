@@ -14,6 +14,19 @@ class StudentRepository():
     def findbyName(self, name):
         students = []
         for student in self.__studentsData:
-            if student.getname() == name:
+            if student.getName() == name:
                 students.append(student)
         return students
+
+    def deleteStudent(self, student):
+        for s in self.__studentsData:
+            if student.getName() == s.getName():
+                del self.__studentsData[self.__studentsData.index(s)]
+                break
+
+    def searchByName(self, name):
+        searchResult = []
+        for student in self.__studentsData:
+            if name in student.getName():
+                searchResult.append(student)
+        return searchResult
