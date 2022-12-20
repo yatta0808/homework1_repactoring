@@ -6,7 +6,7 @@ studentController = StudentController()
 while True:
     ans = showMenu()
     if ans == '1':
-        student= inputStudentInfo()
+        student= inputStudentAllInfo()
         studentController.addStudent(student)
     elif ans == '2':
         deleteStudentName = inputDeleteStudentName()
@@ -21,7 +21,19 @@ while True:
         showAllStudents(students)
     
     elif ans == '4':
-        name = inputSearchName()
+        name = inputName("search")
         result = studentController.searchByName(name)
         showResultHeader(name)
         showAllStudents(result)
+
+
+    elif ans == '5':
+        break
+    
+    elif ans == '6':
+        name = inputName("update")
+        if studentController.presenceOrAbsence(name):
+            updateData = inputStudentInfoWithoutName(name)
+            studentController.updateStudent(updateData)
+        else:
+            showNone()

@@ -19,3 +19,9 @@ def changeAllObjectToList(enteredStudents):
     for enteredStudent in enteredStudents:
         students.append(changeObjectToList(enteredStudent))
     return students
+
+def presenceOrAbsenceService(students):
+    if len(students) > 0:
+            return True
+    else:
+            return False

@@ -11,7 +11,7 @@ class StudentRepository():
     def findAllStudents(self):
         return self.__studentsData
 
-    def findbyName(self, name):
+    def findByName(self, name):
         students = []
         for student in self.__studentsData:
             if student.getName() == name:
@@ -30,3 +30,14 @@ class StudentRepository():
             if name in student.getName():
                 searchResult.append(student)
         return searchResult
+
+
+    def updateStudent(self, updateData):
+        updateStudentName = updateData.getName()
+        for student in self.__studentsData:
+            if student.getName() == updateStudentName:
+                student.setAge(updateData.getAge())
+                student.setHeight(updateData.getHeight())
+                student.setAvgScore(updateData.getAvgScore())
+
+    

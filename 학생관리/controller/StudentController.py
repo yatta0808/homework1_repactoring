@@ -31,3 +31,10 @@ class StudentController():
     def searchByName(self, name):
         searchResult = self.studentRepository.searchByName(name)
         return changeAllObjectToList(searchResult)
+
+    def updateStudent(self,updateData):
+        self.studentRepository.updateStudent(changeListToObject(updateData))
+
+    def presenceOrAbsence(self, name):
+        return presenceOrAbsenceService(self.studentRepository.findByName(name))
+        

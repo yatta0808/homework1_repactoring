@@ -23,11 +23,12 @@ class Student():
     def setAge(self, age):   
         self.__age = age
 
-    def setName(self, height):    # set과 반대, 외부에서 해당 객체의 데이터를 수정할 때 사용함
+    def setHeight(self, height):    # set과 반대, 외부에서 해당 객체의 데이터를 수정할 때 사용함
         self.__height = height
 
-    def setName(self, avgScore):    # set과 반대, 외부에서 해당 객체의 데이터를 수정할 때 사용함
+    def setAvgScore(self, avgScore):    # set과 반대, 외부에서 해당 객체의 데이터를 수정할 때 사용함
         self.__avgScore = avgScore
 
 
 #student.name 대신 setName/getName 을 이용해 접근함
+#학생 간 구별을 위해 uniquekey, ID가 필요함
