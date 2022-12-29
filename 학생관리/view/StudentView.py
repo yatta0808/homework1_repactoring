@@ -3,7 +3,7 @@ SEARCH_INPUT_MESSAGE = "검색할 단어를 선택하세요: "
 UPDATE_INPUT_MESSAGE = "수정할 학생의 이름을 입력하세요: "
 
 def showMenu():
-    print("----[학생 관리 프로그램]----\n","1. 학생 추가\n","2. 학생 삭제\n","3. 학생 전체 조회\n","4. 학생 검색\n", "5. 종료\n", "6. 학생 정보 수정", end = "\n")
+    print("----[학생 관리 프로그램]----\n","1. 학생 추가\n","2. 학생 삭제\n","3. 학생 전체 조회\n","4. 학생 검색\n", "5. 종료\n", "6. 학생 정보 수정\n","7. 점수 순위 확인",end = "\n")
     return input(MENU_MESSAGE)
     
 def inputStudentAllInfo():
@@ -59,3 +59,6 @@ def inputStudentInfoWithoutName(updatedname):
     avgScore = inputStudentAvgScoreInfo()
     return [name, age, height, avgScore]
 
+def showTop3Students(students):
+    for i in range(1, len(students)+1):
+        print(i, "등 : ",students[i-1])

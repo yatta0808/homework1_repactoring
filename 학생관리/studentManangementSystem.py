@@ -37,3 +37,7 @@ while True:
             studentController.updateStudent(updateData)
         else:
             showNone()
+
+    elif ans == '7':
+        top3 = studentController.searchTopScoreStudent()
+        showTop3Students(top3)

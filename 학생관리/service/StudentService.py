@@ -25,3 +25,10 @@ def presenceOrAbsenceService(students):
             return True
     else:
             return False
+
+def findTopScoreStudent(students):
+    studentDic = {}
+    for student in students:
+        studentDic[student.getName()] = int(student.getAvgScore())
+    sorted_studentDic = sorted(studentDic.items(), key = lambda item: item[1], reverse=True)
+    return sorted_studentDic[0:3]

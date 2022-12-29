@@ -38,3 +38,6 @@ class StudentController():
     def presenceOrAbsence(self, name):
         return presenceOrAbsenceService(self.studentRepository.findByName(name))
         
+    def searchTopScoreStudent(self):
+        students = self.studentRepository.findAllStudents()
+        return findTopScoreStudent(students)

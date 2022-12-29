@@ -29,6 +29,9 @@ class Student():
     def setAvgScore(self, avgScore):    # set과 반대, 외부에서 해당 객체의 데이터를 수정할 때 사용함
         self.__avgScore = avgScore
 
+    def toString(self):
+        return self.__name+','+str(self.__age)+','+str(self.__height)+','+str(self.__avgScore)+'\n'
+
 
 #student.name 대신 setName/getName 을 이용해 접근함
 #학생 간 구별을 위해 uniquekey, ID가 필요함
